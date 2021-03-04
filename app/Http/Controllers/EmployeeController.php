@@ -55,7 +55,7 @@ class EmployeeController extends Controller
     }else{
         $request->session()->flash('danger', 'Something went wrong while adding company');
     } 
-    return redirect()->back(); 
+    return redirect()->route('employees.index');
 
 }
 
@@ -121,6 +121,6 @@ class EmployeeController extends Controller
 
         Employee::where('id',$id)->delete();
         session()->flash('success', 'Deleted');
-        return redirect()->back();
+       return redirect()->route('employees.index');
     }
 }

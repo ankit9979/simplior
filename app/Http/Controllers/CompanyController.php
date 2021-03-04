@@ -60,7 +60,7 @@ class CompanyController extends Controller
         }else{
             $request->session()->flash('danger', 'Something went wrong while adding company');
         } 
-        return redirect()->back(); 
+       return redirect()->route('companies.index');
 
     }
 

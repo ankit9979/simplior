@@ -24,22 +24,23 @@ class CompanyRequest extends FormRequest
     public function rules()
     {
 
-     if(request()->isMethod('post'))
-     {
+       if(request()->isMethod('post'))
+       {
         return [
           'name' =>'required',  
           'email' =>'required|email', 
           'website' =>'required',          
-          'logo' => 'required|dimensions:max_width=110,max_height=110',
+          'logo' => 'required|dimensions:max_width=100,max_height=100',
       ];
   }
   elseif(request()->isMethod('PUT'))
   {
-         
+
       return [
           'name' =>'required',  
           'email' =>'required|email', 
-          'website' =>'required',          
+          'website' =>'required',    
+          'logo' => 'dimensions:max_width=100,max_height=100',      
           
       ];
   }  
